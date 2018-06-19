@@ -1,0 +1,149 @@
+
+// ============== HEADER Layout
+header {
+  font-family: $font-family-OpenSans;
+  nav {
+    background: $lucky-purple;
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    justify-content: center;
+    align-items: center;
+    #brand {
+      display: block;
+      padding: 14px 16px;
+      text-align: center;
+      justify-self: start;
+      a {
+        color: #fff;
+        letter-spacing: 0.05em;
+        font-size: 14px;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    #navbar_links {
+      justify-self: end;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        #bars {
+          display: none;
+          &.active_smaller_screen {
+            display: block;
+          }
+          li {
+            a {
+              color: #eee;
+              display: block;
+              padding: 14px 16px;
+              font-size: 14px;
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+        #menu {
+          display: block;
+          &.active_smaller_screen {
+            display: none;
+          }
+          li {
+            display: inline-block;
+            a {
+              color: #eee;
+              display: block;
+              padding: 14px 16px;
+              font-size: 14px;
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #profile_hero {
+    background: lighten($lucky-purple, 2%);
+    display: grid;
+    grid-template-columns: 75px 1fr 1fr;
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-OpenSans;
+    padding: 14px 16px;
+    #user_image {
+      display: block;
+      padding: 0;
+      margin: 0;
+      img {
+        border-radius: 100%;
+        width: 43px;
+        display: block;
+        margin: 0 auto
+      }
+    }
+    #user_details {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      .primary_info {
+        display: flex;
+        flex-direction: column;
+        strong {
+          color: #efefef;
+        }
+        small {
+          color: $wafer;
+        }
+      }
+      .read_more {
+        margin-left: 15px;
+        a {
+          display: block;
+          padding: 14px 16px;
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+      .contact_me {
+        a {
+          display: block;
+          padding: 14px 16px;
+          color: $celestial-green;
+          font-size: 18px;
+          &:hover {
+            color: darken($celestial-green, 5%);
+          }
+        }
+      }
+    }
+    #user_media {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4,43px);
+        justify-content: end;
+        margin: 0;
+        padding: 0;
+        list-style: none outside;
+        li {
+          a {
+            display: block;
+            padding: 14px 16px;
+            color: #ddd;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

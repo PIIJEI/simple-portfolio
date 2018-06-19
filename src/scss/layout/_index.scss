@@ -1,0 +1,22 @@
+// @source http://smacss.com/book/type-layout
+//
+// Layout Rules
+//
+// Layout styles can also be divided into major and minor styles based on
+// reuse. Major layout styles such as header and footer are traditionally
+// styled using ID selectors but take the time to think about the elements
+// that are common across all components of the page and use class selectors
+// where appropriate.
+
+//imports Layout
+@import '_header';
+@import '_nav';
+@import '_content';
+@import '_footer';
+
+h1,h2,h3,h4,h5,h6,p {margin: 0;}
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}

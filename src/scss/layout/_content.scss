@@ -1,0 +1,289 @@
+main {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  font-family: $font-family-Lato;
+  font-weight: $font-family-regular;
+  .intro {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    margin: 0 auto;
+    h1 {
+      padding: 14px 16px 3px 16px;
+      font-size: 28px;
+      text-align: center;
+    }
+    p {
+      padding: 14px 16px;
+      max-width: 100%;
+      font-size: 21px;
+      color: #3c3c3c;
+      text-align: center;
+    }
+  }
+  h2 {
+    padding: 14px 16px;
+    text-align: center;
+    font-family: $font-family-Lato;
+  }
+
+  //Main Content Welcome
+  .main_content_welcome {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    .profile_image_content {
+      width: 256px;
+      padding: 5px 10px;
+      img {
+        border-radius: 100%;
+        width: 100%;
+      }
+    }
+    .profile_info_content {
+      width: 100%;
+      h2 {
+        text-align: left;
+        font-size: 28px;
+      }
+      p {
+        letter-spacing: 0.05em;
+        font-family: $font-family-OpenSans;
+        padding: 14px 16px;
+        line-height: 1.5em;
+        word-wrap: break-word;
+        font-size: 18px;
+      }
+    }
+  }
+
+  //Main Content Recent Work
+  .main_content_recent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+    .recent-title {
+      h2 {
+        padding: 14px 16px;
+        text-align: left;
+      }
+    }
+    .recent-work {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 25px;
+      grid-row-gap: 25px;
+      justify-content: center;
+      align-items: center;
+      &--element {
+        position: relative;
+        a {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          &:hover {
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 98.7%;
+              z-index: 1;
+              background: $border-input-bubble-focus;
+            }
+            .recent-work--element__title {
+              display: block;
+            }
+          }
+          .recent-work--element__image {
+            position: relative;
+          }
+          .recent-work--element__title {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            h3 {
+              font-size: 15px;
+              font-family: $font-family-Lato;
+              letter-spacing: 0.05em;
+              width: 200px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+#chat_bubble {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  justify-content: end;
+  display: none;
+  z-index: 10;
+  &.bubble-active {
+    display: block;
+  }
+  .chat_container {
+    width: 320px; //reduce to 100% on smaller screen
+    padding: 0;
+    margin-right:25px; //reduce to 0 on smaller screen
+    .chat {
+      &--header {
+        background: $lucky-purple;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        &:hover {
+          cursor: pointer;
+        }
+        h2 {
+          color: #fff;
+          font-size: 14px;
+          letter-spacing: 0.05em;
+          padding: 14px 16px;
+          flex-grow: 1;
+        }
+        a {
+          display: block;
+          padding: 14px 16px;
+          color: #fff;
+          font-size: 14px;
+          background: darken($lucky-purple, 3%);
+          &:hover {
+            background: darken($lucky-purple, 10%);
+          }
+        }
+      }
+    }
+    form#post_message {
+      .chat {
+        &--body {
+          padding: 14px 16px;
+          background: #fff;
+          border-left: 1px solid #eee;
+          border-right: 1px solid #eee;
+          .chat-container-box {
+            word-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            h3 {
+              font-size: 16px;
+              padding: 7px 0 15px 0;
+              margin-bottom: 10px;
+              letter-spacing: 0.05em;
+              font-family: $font-family-OpenSans;
+              font-weight: $font-family-bold;
+              border-bottom: 1px dashed $border-input-bubble;
+            }
+            label {
+              font-size: 14px;
+              padding: 5px 0;
+              background: #fff;
+            }
+            input[type="text"] {
+              display: block;
+              padding: 7px;
+              margin-bottom: 15px;
+              border: 1px solid $border-input-bubble;
+              color: $lucky-purple;
+              font-size: 14px;
+              font-weight: $font-family-bold;
+              font-family: $font-family-OpenSans;
+              &:focus {
+                outline: 1px solid $border-input-bubble-focus;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+        &--footer {
+          background: #eee;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-row-gap: 5px;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          .chat-sender-box {
+            width: max-content;
+            textarea {
+              resize: none;
+              border: none;
+              width: 278px;
+              max-width: 100%;
+              padding: 14px 16px;
+              font-size: 14px;
+              font-weight: $font-family-bold;
+              color: $lucky-purple;
+              &:focus {
+                outline: none;
+              }
+              &::placeholder {
+                font-weight: $font-family-regular;
+              }
+            }
+            #char_counter {
+              font-family: $font-family-Lato;
+              font-weight: $font-family-bold;
+              text-align: center;
+              padding: 14px 16px;
+              font-size: 16px;
+              color: $lucky-purple;
+            }
+          }
+          .chat-sender-button {
+            button.chat-btn {
+              width: 100%;
+              border: none;
+              padding: 14px 16px;
+              background: $lucky-purple;
+              color: #fff;
+              letter-spacing: 0.05em;
+              font-size: 14px;
+              &:hover {
+                background: darken($lucky-purple, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
