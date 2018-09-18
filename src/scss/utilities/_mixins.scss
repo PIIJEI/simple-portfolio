@@ -80,7 +80,7 @@ BREAKPOINTS
      @media (max-width: 768px) { @content ; }
   }
   @else if $point == mobile {
-     @media (max-width: 540em)  { @content ; }
+     @media (max-width: 540px)  { @content ; }
 
   }
 }
