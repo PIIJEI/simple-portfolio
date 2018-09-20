@@ -41,6 +41,26 @@ main {
   .main_content_welcome {
     position: relative;
     height: 64vh;
+    @include breakpoint(fixgapvp) {
+      height: auto;
+      padding: 75px 0;
+    }
+    @include breakpoint(desktop) {
+      height: auto;
+      padding: 135px 0;
+    }
+    @include breakpoint(laptop) {
+      height: auto;
+      padding: 35px 0;
+    }
+    @include breakpoint(tablet_pro) {
+      height: auto;
+      padding: 35px 0;
+    }
+    @include breakpoint(tablet) {
+      height: auto;
+      padding: 35px 0;
+    }
     @include breakpoint(mobile) {
       height: auto;
       padding: 35px 0;
@@ -94,6 +114,27 @@ main {
           padding: 15px 0;
           margin-bottom: 20px;
           font-family: $font-family-OpenSans;
+          @include breakpoint(fixgapt) {
+            font-size: 2.2rem;
+            strong {
+              display: block;
+            }
+          }
+          @include breakpoint(fixgapvp) {
+            font-size: 2.8rem;
+          }
+          @include breakpoint(desktop) {
+            font-size: 3vw;
+          }
+          @include breakpoint(laptop) {
+            font-size: 2.7rem;
+          }
+          @include breakpoint(tablet_pro) {
+            font-size: 3rem;
+          }
+          @include breakpoint(tablet) {
+            font-size: 2.3rem;
+          }
           @include breakpoint(mobile) {
             font-size: 2rem;
           }
@@ -119,6 +160,9 @@ main {
               @include breakpoint(mobile) {
                 display: none;
               }
+              @include breakpoint(fixgapt) {
+                display: none;
+              }
             }
             &:after {
               content: '';
@@ -135,6 +179,9 @@ main {
               border-left: 10px solid transparent;
               border-right: 10px solid transparent;
               @include breakpoint(mobile) {
+                display: none;
+              }
+              @include breakpoint(fixgapt) {
                 display: none;
               }
             }
@@ -156,6 +203,21 @@ main {
           &:before {
             width: 280px;
             top: 0;
+            @include breakpoint(fixgapvp) {
+              width: 380px;
+            }
+            @include breakpoint(desktop) {
+              width: 45%;
+            }
+            @include breakpoint(laptop) {
+              width: 32%;
+            }
+            @include breakpoint(tablet_pro) {
+              width: 480px;
+            }
+            @include breakpoint(tablet) {
+              width: 460px;
+            }
             @include breakpoint(mobile) {
               width: 75%;
             }
@@ -163,6 +225,21 @@ main {
           &:after {
             width: 640px;
             bottom: 0;
+            @include breakpoint(fixgapvp) {
+              width: 540px;
+            }
+            @include breakpoint(desktop) {
+              width: 60%;
+            }
+            @include breakpoint(laptop) {
+              width: 64%;
+            }
+            @include breakpoint(tablet_pro) {
+              width: 580px;
+            }
+            @include breakpoint(tablet) {
+              width: 460px;
+            }
             @include breakpoint(mobile) {
               width: 75%;
             }
@@ -182,6 +259,25 @@ main {
           flex-direction: row;
           margin: 10px 1%;
           min-height: 150px;
+          @include breakpoint(fixgapvp) {
+            font-size: 20px;
+            width: 420px;
+          }
+          @include breakpoint(desktop) {
+            font-size: 1.4vw;
+          }
+          @include breakpoint(laptop) {
+            width: 40%;
+            font-size: 1.3em;
+          }
+          @include breakpoint(tablet_pro) {
+            width: 40%;
+            font-size: 1.4em;
+          }
+          @include breakpoint(tablet) {
+            width: 40%;
+            font-size: 1.2em;
+          }
           @include breakpoint(mobile) {
             width: 100%;
             font-size: 1.1em;

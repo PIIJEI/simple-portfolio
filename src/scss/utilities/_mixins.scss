@@ -76,12 +76,20 @@ BREAKPOINTS
    @else if $point == laptop {
      @media (max-width: 960px) { @content ; }
   }
-    @else if $point == tablet {
+   @else if $point == tablet_pro {
+    @media (min-width: 961px) and (max-width: 1024px) { @content ; }
+  }
+   @else if $point == tablet {
      @media (max-width: 768px) { @content ; }
   }
   @else if $point == mobile {
      @media (max-width: 540px)  { @content ; }
-
+  }
+  @else if $point == fixgapvp {
+    @media (min-width: 1024px) and (max-width: 1065px) { @content ; }
+  }
+  @else if $point == fixgapt {
+    @media (min-width: 540px) and (max-width: 620px) { @content ; }
   }
 }
 
