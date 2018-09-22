@@ -49,7 +49,12 @@
   var closeModal_rsh = $('.modal-content-close').data({'click':'close-modal'});
   var openModal_idrsh = $('.recent-work--element');
 
-  $('#modal-rw').hide();
+  // $('#modal-rw').hide();
+  $('body').css({
+    'position' : 'fixed',
+    'width' : '100%'
+  });
+  
   $(closeModal_rsh).on('click', function(){
     $('#modal-rw').fadeOut(200);
     $('body').removeAttr('style');
