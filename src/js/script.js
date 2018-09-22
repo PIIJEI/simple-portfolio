@@ -40,6 +40,33 @@
   // $('.home_content_container').hide();
 
 
+
+
+
+
+
+  //data-close="close-modal" / button data-click="close-modal"
+  var closeModal_rsh = $('.modal-content-close').data({'click':'close-modal'});
+  var openModal_idrsh = $('.recent-work--element');
+
+  $('#modal-rw').hide();
+  $(closeModal_rsh).on('click', function(){
+    $('#modal-rw').fadeOut(200);
+    $('body').removeAttr('style');
+  });
+  $(openModal_idrsh).each(function(){
+    if($(this).attr('data-id')) {
+      $(this).on('click', function(){
+          $('body').css({
+            'position' : 'fixed',
+            'width' : '100%'
+          });
+          $('#modal-rw').fadeIn(200);
+      });
+    }
+  });
+
+
     var navSocialIcons = $('#expand-social-toggle');
     $('.hide-social').hide();
     $('.top-nav-social').hide();
