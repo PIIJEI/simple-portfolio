@@ -22,22 +22,22 @@
   });
 
   //counter intro
-  var count = 0;
-  function introCount(e) {
-    if(count === 0) {
-      count++;
-    } else if(count > 100) {
-      count = 100;
-      $('#home_intro').delay(300).fadeOut(100);
-      $('.home_content_container').fadeIn(2000);
-
-    }
-    $('#counter_content').text(count++);
-  }
-  setInterval(introCount, 25);
+  // var count = 0;
+  // function introCount(e) {
+  //   if(count === 0) {
+  //     count++;
+  //   } else if(count > 100) {
+  //     count = 100;
+  //     $('#home_intro').delay(300).fadeOut(100);
+  //     $('.home_content_container').fadeIn(2000);
+  //
+  //   }
+  //   $('#counter_content').text(count++);
+  // }
+  // setInterval(introCount, 25);
 
   //content main index fadeIn when introCount() completed fadeOut
-  $('.home_content_container').hide();
+  // $('.home_content_container').hide();
 
 
     var navSocialIcons = $('#expand-social-toggle');
