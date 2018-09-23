@@ -290,19 +290,20 @@ main {
 
   //Main Content Recent Work
   .main_content_recent {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 100%;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr;
+    // justify-content: center;
+    // align-items: center;
+    // margin: 0 auto;
+    // width: 100%;
     border-bottom: 1px solid #eee;
-    padding-bottom: 25px;
     margin-top: -45px;
     padding: 0 25px 35px;
     @include breakpoint(mobile) {
       margin-top: -25px;
+      width: 100%;
+      padding: 0;
     }
     .recent-title {
       width: 768px;
@@ -317,7 +318,7 @@ main {
         width: 480px;
       }
       @include breakpoint(mobile) {
-        width: 100vw;
+        width: 100%;
         margin-bottom: 0;
       }
       &:before,
@@ -470,6 +471,7 @@ main {
           text-transform: uppercase;
           @include breakpoint(mobile) {
             background: none;
+            margin-bottom: 20px;
           }
           &:after {
             content: '';

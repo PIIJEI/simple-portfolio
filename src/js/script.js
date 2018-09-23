@@ -22,22 +22,22 @@
   });
 
   //counter intro
-  // var count = 0;
-  // function introCount(e) {
-  //   if(count === 0) {
-  //     count++;
-  //   } else if(count > 100) {
-  //     count = 100;
-  //     $('#home_intro').delay(300).fadeOut(100);
-  //     $('.home_content_container').fadeIn(2000);
-  //
-  //   }
-  //   $('#counter_content').text(count++);
-  // }
-  // setInterval(introCount, 25);
+  var count = 0;
+  function introCount(e) {
+    if(count === 0) {
+      count++;
+    } else if(count > 100) {
+      count = 100;
+      $('#home_intro').delay(300).fadeOut(100);
+      $('.home_content_container').fadeIn(2000);
+
+    }
+    $('#counter_content').text(count++);
+  }
+  setInterval(introCount, 25);
 
   //content main index fadeIn when introCount() completed fadeOut
-  // $('.home_content_container').hide();
+  $('.home_content_container').hide();
 
 
 
@@ -49,16 +49,13 @@
   var closeModal_rsh = $('.modal-content-close').data({'click':'close-modal'});
   var openModal_idrsh = $('.recent-work--element');
 
-  // $('#modal-rw').hide();
-  $('body').css({
-    'position' : 'fixed',
-    'width' : '100%'
-  });
-  
+  $('#modal-rw').hide();
+
   $(closeModal_rsh).on('click', function(){
     $('#modal-rw').fadeOut(200);
     $('body').removeAttr('style');
   });
+
   $(openModal_idrsh).each(function(){
     if($(this).attr('data-id')) {
       $(this).on('click', function(){
@@ -72,17 +69,17 @@
   });
 
 
-    var navSocialIcons = $('#expand-social-toggle');
-    $('.hide-social').hide();
-    $('.top-nav-social').hide();
+  var navSocialIcons = $('#expand-social-toggle');
+  $('.hide-social').hide();
+  $('.top-nav-social').hide();
 
-    navSocialIcons.on('click', function(){
-      console.log('click test');
-      $('.trigger').toggle();
-      $('.top-nav-social').animate({
-        width:'toggle'
-      }, 350);
-    });
+  navSocialIcons.on('click', function(){
+    console.log('click test');
+    $('.trigger').toggle();
+    $('.top-nav-social').animate({
+      width:'toggle'
+    }, 350);
+  });
 
 
 }(jQuery));
