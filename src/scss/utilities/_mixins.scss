@@ -70,16 +70,19 @@ BREAKPOINTS
 
 
  @mixin breakpoint($point) {
-   @if $point == desktop {
+  @if $point == desktop {
      @media (min-width: 1280px) { @content ; }
   }
-   @else if $point == laptop {
+  @else if $point == maxdesktop {
+     @media (max-width: 1280px) { @content ; }
+  }
+  @else if $point == laptop {
      @media (max-width: 960px) { @content ; }
   }
-   @else if $point == tablet_pro {
+  @else if $point == tablet_pro {
     @media (min-width: 961px) and (max-width: 1024px) { @content ; }
   }
-   @else if $point == tablet {
+  @else if $point == tablet {
      @media (max-width: 768px) { @content ; }
   }
   @else if $point == mobile {

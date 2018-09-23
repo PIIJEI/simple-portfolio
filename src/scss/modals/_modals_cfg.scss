@@ -12,6 +12,10 @@
     top: 25px;
     right: 25px;
     z-index: 11;
+    @include breakpoint(mobile) {
+      top: 10px;
+      right: 10px;
+    }
     button {
       border: none;
       color: #8c8c8c;
@@ -45,12 +49,22 @@
     max-height: 84vh;
     overflow-y: scroll;
     background: #fff;
+    @include breakpoint(tablet) {
+      width: 90%;
+      max-height: 94vh;
+    }
+    @include breakpoint(mobile) {
+      width: 95%;
+      max-height: 86vh;
+    }
     .modal-content-image {
-      // display: flex;
-      // flex-direction: row;
-      // flex-wrap: nowrap;
-      // align-items: flex-start;
-      height: 55vh;
+      background: grey;
+      @include breakpoint(maxdesktop) {
+        max-height: 720px;
+      }
+      @include breakpoint(tablet) {
+        height: 100%;
+      }
       .modal-big-image {
         display: block;
         position: relative;
@@ -59,6 +73,11 @@
         img {
           width: 100%;
           margin: -25px 0 -20px;
+          @include breakpoint(tablet) {
+            margin: 0;
+            height: 100%;
+            margin: 0px 0 -20px;
+          }
         }
         .big-image-text {
           position: absolute;
@@ -93,6 +112,9 @@
           -ms-transform: translateY(0);
           -o-transform: translateY(0);
           transform: translateY(0);
+          @include breakpoint(tablet) {
+            display: none;
+          }
           .thumb-wrapper {
             margin: 5px;
             .thumb-item {
@@ -216,10 +238,10 @@
       padding: 0;
       max-width: 100%;
       min-height: 1%;
-      z-index: 10;
+      z-index: 0;
       margin: 0 auto;
       background: #fff;
-      padding: 50px 25px;
+      padding: 0px 25px;
       .modal-content-details-heading {
         width: auto;
         border-bottom: 1px solid lighten($iron, 6%);
