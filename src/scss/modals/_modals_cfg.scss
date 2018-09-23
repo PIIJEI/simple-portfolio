@@ -12,9 +12,15 @@
     top: 25px;
     right: 25px;
     z-index: 11;
+    @include breakpoint(tablet) {
+      top: 1.75%;
+      right: 6.5%;
+      background: #fff;
+    }
     @include breakpoint(mobile) {
-      top: 10px;
-      right: 10px;
+      top: 4%;
+      right: 4.2%;
+      background: $lucky-purple;
     }
     button {
       border: none;
@@ -33,6 +39,15 @@
         color: lighten($lucky-purple, 25%);
         outline: none;
       }
+      @include breakpoint(tablet) {
+        padding: 10px 20px;
+        font-size: 24px;
+      }
+      @include breakpoint(mobile) {
+        font-size: 18px;
+        padding: 10px 20px;
+        color: $white;
+      }
     }
   }
   .modal-container {
@@ -50,20 +65,17 @@
     overflow-y: scroll;
     background: #fff;
     @include breakpoint(tablet) {
-      width: 90%;
-      max-height: 94vh;
+      width: 87%;
+      max-height: 75vh;
     }
     @include breakpoint(mobile) {
       width: 95%;
-      max-height: 86vh;
+      max-height: 85vh;
     }
     .modal-content-image {
       background: grey;
       @include breakpoint(maxdesktop) {
         max-height: 720px;
-      }
-      @include breakpoint(tablet) {
-        height: 100%;
       }
       .modal-big-image {
         display: block;
@@ -72,7 +84,7 @@
         overflow: hidden;
         img {
           width: 100%;
-          margin: -25px 0 -20px;
+          margin: -15% 0 -20px;
           @include breakpoint(tablet) {
             margin: 0;
             height: 100%;
@@ -91,7 +103,6 @@
             text-shadow: 4px 2px 1px rgba(0,0,0,.3);
           }
         }
-
 
         //test thumb
         .modal-thumb-image {
@@ -162,7 +173,56 @@
             bottom: 0;
           }
         }
-
+        .image-scroll-indicators {
+          display: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 100%;
+          width: 100%;
+          z-index: 10;
+          button {
+            position: absolute;
+            border: none;
+            background: transparent;
+            align-self: center;
+            &:active,
+            &:focus {
+              outline: none;
+            }
+            &.btn {
+              padding: 14px 16px;
+              height: 50%;
+              &--r01left {
+                left: 0;
+                color: #fff;
+                @include breakpoint(tablet) {
+                  width: 120px;
+                  font-size: 32px;
+                }
+                @include breakpoint(mobile) {
+                  width: 75px;
+                  font-size: 18px;
+                }
+              }
+              &--r01right {
+                right: 0;
+                color: #fff;
+                @include breakpoint(tablet) {
+                  width: 120px;
+                  font-size: 32px;
+                }
+                @include breakpoint(mobile) {
+                  width: 75px;
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+          @include breakpoint(tablet) {
+            display: flex;
+          }
+        }
       }
       //end big image class
       // .modal-thumb-image {
