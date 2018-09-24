@@ -71,10 +71,22 @@ header {
     align-items: center;
     font-family: $font-family-OpenSans;
     padding: 14px 16px;
+    @include breakpoint(mobile) {
+      grid-template-columns: repeat(6, 1fr);
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
     #user_image {
       display: block;
       padding: 0;
       margin: 0;
+      @include breakpoint(tablet) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+      }
       img {
         border-radius: 100%;
         width: 43px;
@@ -87,6 +99,13 @@ header {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
+      @include breakpoint(mobile) {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        // justify-content: center;
+      }
       .primary_info {
         display: flex;
         flex-direction: column;
@@ -122,6 +141,13 @@ header {
       display: flex;
       justify-content: flex-end;
       flex-flow: row wrap;
+      @include breakpoint(mobile) {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        justify-content: center;
+      }
       div#expand-social-toggle {
         &.expand-social-media {
           color: lighten($color-text-heading, 15%);
@@ -137,7 +163,7 @@ header {
       }
       ul {
         display: grid;
-        grid-template-columns: auto repeat(4,43px);
+        grid-template-columns: repeat(4,1fr);
         justify-content: end;
         margin: 0;
         padding: 0;

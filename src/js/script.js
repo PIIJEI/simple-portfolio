@@ -40,11 +40,6 @@
   $('.home_content_container').hide();
 
 
-
-
-
-
-
   //data-close="close-modal" / button data-click="close-modal"
   var closeModal_rsh = $('.modal-content-close').data({'click':'close-modal'});
   var openModal_idrsh = $('.recent-work--element');
@@ -68,17 +63,15 @@
     }
   });
 
-
   var navSocialIcons = $('#expand-social-toggle');
-  $('.hide-social').hide();
   $('.top-nav-social').hide();
+  $('.hide-social').hide();
 
   navSocialIcons.on('click', function(){
-    console.log('click test');
     $('.trigger').toggle();
     $('.top-nav-social').animate({
       width:'toggle'
-    }, 350);
+    }, 250);
   });
 
 
