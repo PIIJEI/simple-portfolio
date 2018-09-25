@@ -77,6 +77,12 @@ header {
       align-items: center;
       max-width: 100%;
     }
+    @include breakpoint(fixgapt) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
     #user_image {
       display: block;
       padding: 0;
@@ -86,6 +92,12 @@ header {
         grid-column-end: 1;
         grid-row-start: 1;
         grid-row-end: 1;
+      }
+      @include breakpoint(fixgapt) {
+        display: none;
+      }
+      @include breakpoint(mobile) {
+        display: none;
       }
       img {
         border-radius: 100%;
@@ -100,15 +112,22 @@ header {
       flex-wrap: wrap;
       align-items: center;
       @include breakpoint(mobile) {
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-column-end: 7;
         grid-row-start: 1;
         grid-row-end: 1;
-        // justify-content: center;
+        justify-content: center;
+      }
+      @include breakpoint(small-mobile) {
+        display: block;
+        text-align: center;
       }
       .primary_info {
         display: flex;
         flex-direction: column;
+        @include breakpoint(mobile) {
+          flex-grow: 1;
+        }
         strong {
           color: #efefef;
         }
@@ -116,23 +135,33 @@ header {
           color: $wafer;
         }
       }
-      .read_more {
-        margin-left: 15px;
-        a {
-          display: block;
-          padding: 14px 16px;
-          color: #fff;
-          font-size: 16px;
+      .top-head-icon-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        @include breakpoint(small-mobile) {
+          justify-content: center;
         }
-      }
-      .contact_me {
-        a {
-          display: block;
-          padding: 14px 16px;
-          color: $celestial-green;
-          font-size: 18px;
-          &:hover {
-            color: darken($celestial-green, 5%);
+        .read_more {
+          margin-left: 15px;
+          @include breakpoint(mobile) {
+            margin: 0;
+          }
+          a {
+            display: block;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 16px;
+          }
+        }
+        .contact_me {
+          a {
+            display: block;
+            padding: 14px 16px;
+            color: $celestial-green;
+            font-size: 18px;
+            &:hover {
+              color: darken($celestial-green, 5%);
+            }
           }
         }
       }
@@ -157,6 +186,11 @@ header {
           .show-social, .hide-social {
             &.active {
               display: block;
+            }
+            span {
+              @include breakpoint(fixgapt) {
+                display: none;
+              }
             }
           }
         }

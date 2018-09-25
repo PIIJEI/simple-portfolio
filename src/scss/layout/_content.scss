@@ -1026,3 +1026,27 @@ main {
     }
   }
 }
+
+
+
+//about page content = imports included later
+
+.container-about {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  //sidebar
+  .sidebar-about-nav {
+    display: block;
+    height: 100vw;
+    width: 300px;
+    background: #e7e7e7;
+  }
+}

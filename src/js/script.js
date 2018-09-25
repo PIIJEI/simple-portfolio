@@ -37,7 +37,7 @@
   setInterval(introCount, 25);
 
   //content main index fadeIn when introCount() completed fadeOut
-  $('.home_content_container').hide();
+  // $('.home_content_container').hide();
 
 
   //data-close="close-modal" / button data-click="close-modal"
