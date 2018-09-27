@@ -177,3 +177,10 @@ BREAKPOINTS
 // @usage - `@include invisible`
 
 @mixin invisible { visibility: hidden; }
+
+@mixin listClear {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+}

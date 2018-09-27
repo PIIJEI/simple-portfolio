@@ -34,10 +34,10 @@
     }
     $('#counter_content').text(count++);
   }
-  setInterval(introCount, 25);
+  setInterval(introCount, 5);
 
   //content main index fadeIn when introCount() completed fadeOut
-  // $('.home_content_container').hide();
+  $('.home_content_container').hide();
 
 
   //data-close="close-modal" / button data-click="close-modal"
