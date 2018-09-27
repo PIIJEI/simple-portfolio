@@ -13,7 +13,7 @@
   //sidebar
   .sidebar-about-nav {
     display: block;
-    height: 91.7vh; //temporary height
+    min-height: 100vh; //temporary height
     max-height: 100%;
     width: 100%;
     background: $navigation;
