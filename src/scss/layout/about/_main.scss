@@ -9,7 +9,49 @@
   grid-template-columns: 120px 120px 1fr;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-
+  grid-template-areas: 'nav gallery main';
+  @include breakpoint(laptop) {
+    grid-template-columns: 94px 1fr;
+    grid-template-areas:
+    'nav gallery'
+    'nav main';
+  }
+  @include breakpoint(tablet) {
+    grid-template-areas: 'nav main';
+  }
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'main';
+  }
+  .menu-toggler {
+    position: fixed;
+    top: 135px;
+    left: -5px; // 145 when menu is shown \ -5px when hidden
+    z-index: 100;
+    display: table;
+    &::before {
+      content: '';
+      display: table-cell;
+      position: absolute;
+      top: 0px;
+      left: 5px;
+      width: 60px;
+      height: 60px;
+      background: $navigation;
+      border-top-right-radius: 100%;
+      border-bottom-right-radius: 100%;
+      z-index: -1;
+    }
+    span {
+      color: $white;
+      font-size: 1.75rem;
+      padding: 14px 16px;
+      display: none;
+      @include breakpoint(mobile) {
+        display: block;
+      }
+    }
+  }
   //sidebar
   .sidebar-about-nav {
     display: block;
@@ -17,7 +59,23 @@
     max-height: 100%;
     width: 100%;
     background: $navigation;
+    grid-area: nav;
+    @include breakpoint(mobile) {
+      position: fixed;
+      top: 0;
+      left: -180px; // 0 to show \ -180 to hide
+      z-index: 10;
+      width: 50%;
+      transition: .2s all linear;
+    }
     nav {
+      @include breakpoint(mobile) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
       ul {
         @include listClear;
         width: 100%;
@@ -70,18 +128,43 @@
 
   .main-content-gallery {
     padding: 15px 0;
+    grid-area: gallery;
+    @include breakpoint(laptop) {
+      padding: 15px 0 0;
+      max-width: 100%;
+    }
+    @include breakpoint(tablet) {
+      display: none;
+    }
     ul {
       @include listClear;
       width: 100%;
+      @include breakpoint(laptop) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
       li {
         display: block;
         margin: 10px 0;
+        @include breakpoint(laptop) {
+          margin: 10px 10px;
+        }
         cursor: pointer;
         &:first-of-type {
           margin-top: 0;
+          @include breakpoint(laptop) {
+            margin-top: 10px;
+            margin-left: 0;
+          }
         }
         &:last-of-type {
           margin-bottom: 0;
+          @include breakpoint(laptop) {
+            margin-bottom: 10px;
+            margin-right: 0;
+          }
         }
         img {
           width: 100%;
@@ -93,11 +176,21 @@
 
   .main-content-about {
     font-family: $font-family-OpenSans;
+    grid-area: main;
+    @include breakpoint(laptop) {
+      width: 100%;
+    }
     .content-wrapper {
       .hero-banner-about {
         margin: 15px 0;
         height: 360px;
         position: relative;
+        @include breakpoint(laptop) {
+          margin-top: 0;
+        }
+        @include breakpoint(tablet) {
+          margin-top: 15px;
+        }
         figure {
           position: relative;
           height: auto;
@@ -130,6 +223,10 @@
             position: absolute;
             left: 0;
             bottom: 0;
+            z-index: 1;
+            @include breakpoint(laptop) {
+              grid-template-columns: 1fr;
+            }
             .banner-location {
               .fa-map-marker-alt {
                 color: $flat-yellow;
@@ -143,6 +240,9 @@
             .banner-memory {
               width: 75%;
               justify-self: end;
+              @include breakpoint(laptop) {
+                display: none;
+              }
               &--title {
                 text-align: center;
                 float: right;
@@ -218,6 +318,12 @@
             letter-spacing: 0.03em;
             color: $lucky-purple;
             line-height: 1.2em;
+            @include breakpoint(tablet) {
+              font-size: 2rem;
+            }
+            @include breakpoint(mobile) {
+              font-size: 1.5rem;
+            }
             &.stack-about {
               text-align: center;
             }
@@ -228,6 +334,12 @@
             padding: 25px 25px 25px 0;
             letter-spacing: 0.03em;
             line-height: 1.4em;
+            @include breakpoint(tablet) {
+              font-size: 1.4rem;
+            }
+            @include breakpoint(mobile) {
+              font-size: 1.1rem;
+            }
           }
 
           .stack-list {
@@ -239,6 +351,12 @@
             justify-content: center;
             align-items: start;
             margin: 25px 0;
+            @include breakpoint(laptop) {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            @include breakpoint(mobile) {
+              grid-template-columns: 1fr;
+            }
             .stack-list-item {
               padding: 10px;
               img {
