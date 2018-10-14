@@ -9,6 +9,10 @@
 // $(document).ready(function(){
 (function($) {
 
+  //general settings to be fixed later
+  $('body').removeAttr('class');
+  $('body').removeAttr('style');
+
   //Menu toggler - mobile
   var navOpen = false;
   if($(window).width() < 540) {
@@ -67,22 +71,22 @@
   });
 
   //counter intro
-  var count = 0;
-  function introCount(e) {
-    if(count === 0) {
-      count++;
-    } else if(count > 100) {
-      count = 100;
-      $('#home_intro').delay(300).fadeOut(100);
-      $('.home_content_container').fadeIn(2000);
+  // var count = 0;
+  // function introCount(e) {
+  //   if(count === 0) {
+  //     count++;
+  //   } else if(count > 100) {
+  //     count = 100;
+  //     $('#home_intro').delay(300).fadeOut(100);
+  //     $('.home_content_container').fadeIn(2000);
 
-    }
-    $('#counter_content').text(count++);
-  }
-  setInterval(introCount, 5);
+  //   }
+  //   $('#counter_content').text(count++);
+  // }
+  // setInterval(introCount, 5);
 
-  //content main index fadeIn when introCount() completed fadeOut
-  $('.home_content_container').hide();
+  // //content main index fadeIn when introCount() completed fadeOut
+  // $('.home_content_container').hide();
 
 
   //data-close="close-modal" / button data-click="close-modal"
