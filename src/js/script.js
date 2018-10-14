@@ -8,6 +8,42 @@
 
 // $(document).ready(function(){
 (function($) {
+
+  //Menu toggler - mobile
+  if($(window).width() < 540) {
+
+    var navOpen = false;
+    $('.menu-toggler').on('click', function(){
+      navOpen = !navOpen;
+
+      var $navigation = '#32324d';
+
+      if(navOpen) {
+        $('.sidebar-about-nav').animate({left: '0'},0);
+        $('body').css({
+          'position': 'fixed'
+        });
+        $('body').addClass('navOpen');
+        $('.menu-toggler span').css({
+          'background': $navigation,
+          'margin-left': '5px'
+        });
+      } else {
+        $('.sidebar-about-nav').animate({left: '-50%'},0);
+        $('body').css({
+          'position':''
+        });
+        $('body').removeClass('navOpen');
+        $('.menu-toggler span').css({
+          'background': '',
+          'margin-left': '0'
+        });
+      }
+    });
+
+  }
+
+
   //chatter box
   $('#toggle_view a').on('click', function(e){
     e.preventDefault();

@@ -23,35 +23,6 @@
     grid-template-columns: 1fr;
     grid-template-areas: 'main';
   }
-  .menu-toggler {
-    position: fixed;
-    top: 135px;
-    left: -5px; // 145 when menu is shown \ -5px when hidden
-    z-index: 100;
-    display: table;
-    &::before {
-      content: '';
-      display: table-cell;
-      position: absolute;
-      top: 0px;
-      left: 5px;
-      width: 60px;
-      height: 60px;
-      background: $navigation;
-      border-top-right-radius: 100%;
-      border-bottom-right-radius: 100%;
-      z-index: -1;
-    }
-    span {
-      color: $white;
-      font-size: 1.75rem;
-      padding: 14px 16px;
-      display: none;
-      @include breakpoint(mobile) {
-        display: block;
-      }
-    }
-  }
   //sidebar
   .sidebar-about-nav {
     display: block;
@@ -60,21 +31,54 @@
     width: 100%;
     background: $navigation;
     grid-area: nav;
+    z-index: 9999;
     @include breakpoint(mobile) {
       position: fixed;
       top: 0;
-      left: -180px; // 0 to show \ -180 to hide
+      left: -50%; // 0 to show \ -180 to hide
       z-index: 10;
       width: 50%;
       transition: .2s all linear;
     }
+    //toggler icon
+    .menu-toggler {
+      position: absolute;
+      top: 56px;
+      left: 97%; // 175 when menu is shown \ -5px when hidden
+      z-index: -1;
+      display: none;
+      @include breakpoint(mobile) {
+        display: table;
+        &::before {
+          content: '';
+          display: table-cell;
+          position: absolute;
+          top: 0;
+          left: 5px;
+          width: 60px;
+          height: 60px;
+          background: lighten($lucky-purple, 2%);
+          z-index: -1;
+        }
+        span {
+          cursor: pointer;
+          color: $white;
+          font-size: 1.75rem;
+          padding: 14px 16px;
+          // margin-left: 5px;
+          @include breakpoint(mobile) {
+            display: block;
+          }
+        }
+      }
+    }
     nav {
       @include breakpoint(mobile) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        position: relative;
+        // top: 50%;
+        // left: 50%;
         width: 100%;
-        transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
       }
       ul {
         @include listClear;
