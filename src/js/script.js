@@ -10,9 +10,9 @@
 (function($) {
 
   //Menu toggler - mobile
+  var navOpen = false;
   if($(window).width() < 540) {
 
-    var navOpen = false;
     $('.menu-toggler').on('click', function(){
       navOpen = !navOpen;
 
@@ -42,6 +42,15 @@
     });
 
   }
+  $(window).resize( function() {
+    if($(window).width() >= 540) {
+      $('body').removeAttr('class');
+      $('body').removeAttr('style');
+    } else {
+      $('body').attr('class','navOpen');
+      $('body').attr('style','position: fixed;');
+    }
+  });
 
 
   //chatter box
