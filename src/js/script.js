@@ -1,12 +1,3 @@
-//Add Script to change bottom chat box position to -50px
-
-//#toggle_view a
-//#chat_bubble > .bubble-active on toggle
-
-//#close_bubble
-//#minimise_bubble_toggle
-
-// $(document).ready(function(){
 (function($) {
 
   //general settings to be fixed later
@@ -25,7 +16,8 @@
       if(navOpen) {
         $('.sidebar-about-nav').animate({left: '0'},0);
         $('body').css({
-          'position': 'fixed'
+          'position': 'absolute',
+          'overflow': 'hidden'
         });
         $('body').addClass('navOpen');
         $('.menu-toggler span').css({
@@ -35,7 +27,8 @@
       } else {
         $('.sidebar-about-nav').animate({left: '-50%'},0);
         $('body').css({
-          'position':''
+          'position':'',
+          'overflow': ''
         });
         $('body').removeClass('navOpen');
         $('.menu-toggler span').css({
@@ -50,9 +43,12 @@
     if($(window).width() >= 540) {
       $('body').removeAttr('class');
       $('body').removeAttr('style');
-    } else {
+    } else if($('.sidebar-about-nav').css(left) == '-50%') {
       $('body').attr('class','navOpen');
-      $('body').attr('style','position: fixed;');
+      $('body').attr('style','position: absolute;');
+    } else {
+      $('body').removeAttr('class');
+      $('body').removeAttr('style');
     }
   });
 

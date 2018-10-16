@@ -65,7 +65,6 @@
           color: $white;
           font-size: 1.75rem;
           padding: 14px 16px;
-          // margin-left: 5px;
           @include breakpoint(mobile) {
             display: block;
           }
@@ -75,10 +74,7 @@
     nav {
       @include breakpoint(mobile) {
         position: relative;
-        // top: 50%;
-        // left: 50%;
         width: 100%;
-        // transform: translate(-50%, -50%);
       }
       ul {
         @include listClear;
