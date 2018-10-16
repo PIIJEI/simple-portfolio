@@ -99,6 +99,24 @@ BREAKPOINTS
   }
 }
 
+@mixin min-screen($screen) {
+  @if $screen == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @else if $screen == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $screen == mobile {
+    @media (min-width: 240px) {
+      @content;
+    }
+  }
+}
+
 // Clearfix
 //
 // Nicolas Gallagher's micro clearfix hack

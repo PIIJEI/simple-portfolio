@@ -1,0 +1,134 @@
+.page-container {
+
+  &--projects {
+
+    //mobile min screen
+    @include min-screen(mobile) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-column-gap: 15px;
+      grid-row-gap: 15px;
+      grid-template-areas: 'main';
+    }
+
+    //tablet min screen
+    @include min-screen(tablet) {
+      grid-template-columns: 120px 1fr;
+      grid-template-areas: 'nav main';
+    }
+
+    //desktop min screen
+    @include min-screen(desktop) {
+      grid-template-columns: 120px 1fr;
+      grid-template-areas: 'nav main';
+    }
+
+    .projects-content-wrapper {
+      grid-area: main;
+    }
+
+    //nav
+    .sidebar-nav {
+      display: block;
+      min-height: 100vh; //temporary height
+      max-height: 100%;
+      width: 100%;
+      background: $navigation;
+      grid-area: nav;
+      z-index: 9999;
+      @include breakpoint(mobile) {
+        position: fixed;
+        top: 0;
+        left: -50%; // 0 to show \ -180 to hide
+        z-index: 10;
+        width: 50%;
+        transition: .2s all linear;
+      }
+      //toggler icon
+      .menu-toggler {
+        position: absolute;
+        top: 56px;
+        left: 97%; // 175 when menu is shown \ -5px when hidden
+        z-index: -1;
+        display: none;
+        @include breakpoint(mobile) {
+          display: table;
+          &::before {
+            content: '';
+            display: table-cell;
+            position: absolute;
+            top: 0;
+            left: 5px;
+            width: 60px;
+            height: 60px;
+            background: lighten($lucky-purple, 2%);
+            z-index: -1;
+          }
+          span {
+            cursor: pointer;
+            color: $white;
+            font-size: 1.75rem;
+            padding: 14px 16px;
+            @include breakpoint(mobile) {
+              display: block;
+            }
+          }
+        }
+      }
+      nav {
+        @include breakpoint(mobile) {
+          position: relative;
+          width: 100%;
+        }
+        ul {
+          @include listClear;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          li {
+            width: 100%;
+            text-align: center;
+            a {
+              display: block;
+              padding: 32px 16px;
+              font-size: 32px;
+              color: $white;
+              position: relative;
+              span.hover-text {
+                font-size: 12px;
+                display: block;
+                padding: 5px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                transition: .1s all linear;
+                opacity: 0;
+                letter-spacing: 0.05em;
+                font-family: $font-family-OpenSans;
+                font-weight: 600;
+              }
+              &:hover {
+                span.hover-text {
+                  opacity: 1.0;
+                  top: 54px;
+                  transform: translate(-50%, 50%);
+                }
+              }
+            }
+            &.active-link {
+              a {
+                background: $active;
+                color: $flat-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

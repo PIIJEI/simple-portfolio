@@ -14,7 +14,7 @@
       var $navigation = '#32324d';
 
       if(navOpen) {
-        $('.sidebar-about-nav').animate({left: '0'},0);
+        $('.sidebar-nav').animate({left: '0'},0);
         $('body').css({
           'position': 'absolute',
           'overflow': 'hidden'
@@ -25,7 +25,7 @@
           'margin-left': '5px'
         });
       } else {
-        $('.sidebar-about-nav').animate({left: '-50%'},0);
+        $('.sidebar-nav').animate({left: '-50%'},0);
         $('body').css({
           'position':'',
           'overflow': ''
