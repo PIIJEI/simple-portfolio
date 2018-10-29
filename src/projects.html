@@ -256,13 +256,12 @@
           <div class="projects-content-wrapper">
             <!-- Tag Selectors -->
             <div class="tag-selectors">
+              <h3 class="panel-title">Explore by Category</h3>
               <ul>
-                <li><a href="/" onclick="return false;">Show All</a></li>
-                <li><a href="/" onclick="return false;">Tag #1</a></li>
-                <li><a href="/" onclick="return false;">Tag #2</a></li>
-                <li><a href="/" onclick="return false;">Tag #3</a></li>
-                <li><a href="/" onclick="return false;">Tag #4</a></li>
-                <li><a href="/" onclick="return false;">Tag #5</a></li>
+                <li class="tab-active"><a href="/" onclick="return false;">All</a></li>
+                <li><a href="/" onclick="return false;">Web</a></li>
+                <li><a href="/" onclick="return false;">Graphics</a></li>
+                <li><a href="/" onclick="return false;">Photography</a></li>
               </ul>
             </div>
 
@@ -270,16 +269,26 @@
             <div class="tag-content-wrapper">
               <!-- Tag Element - Primary Preview -->
               <div class="tag-content-main-preview">
-                <figure>
-                  <img src="https://www.placehold.it/1920x720" alt="preview image alt" title="Preview Image">
+                <figure class="big-preview">
+                  <!-- <img src="https://www.placehold.it/1920x720" alt="preview image alt" title="Preview Image"> -->
+                  <div class="big_image" style="background-image:url('https://www.placehold.it/1920x720')"></div>
                   <figcaption>
-                    <div class="project-logo">
-                      <img src="https://www.placehold.it/" alt="logo alt text" title="logo title">
-                    </div>
-                    <h3>Lorem ipsum dolor sit amet.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem excepturi cum illum earum, cumque numquam provident magni quas, ex, architecto vero tempore! Possimus qui, quod ducimus maxime error eveniet natus ex rem reiciendis temporibus quidem.</p>
+                    <span class="latest">Latest Project</span>
+                    <h3 class="caption-title" data-name="lst01">Big Image Title</h3>
                   </figcaption>
                 </figure>
+                <div class="tag-content-main-preview--bottom">
+                  <div class="tag-bottom tag-bottom--left">
+                    <h4>
+                      <span id="tag-bottom-project-count">0</span>
+                      Projects
+                    </h4>
+                  </div>
+                  <div class="tag-bottom tag-bottom--right">
+                    <!-- Link To -->
+                    <button class="action primary">Project Details</button>
+                  </div>
+                </div>
               </div>
               <!-- Tag Element - Other thumbs -->
               <div class="tag-content-main-thumbs">

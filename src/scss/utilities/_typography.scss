@@ -79,6 +79,7 @@ $font-family-OpenSans:       'Open Sans', 'Arial', serif, sans-serif;
 
 $font-family-regular: 400;
 $font-family-bold: 600;
+$font-family-heavy: 700;
 
 
 $font-family-display:         $font-family-sans;
@@ -91,3 +92,23 @@ $font-family-display:         $font-family-sans;
 // @requires - `$font-family-sans`
 
 $font-family-default:         $font-family-sans;
+
+//General Custom Typography classes
+h3 {
+  &.panel-title {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1.2em;
+    font-weight:$font-family-heavy;
+    font-family: $font-family-OpenSans;
+  }
+  &.caption-title {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    line-height: .6em;
+    font-weight: $font-family-heavy;
+    font-family: $font-family-OpenSans;
+  }
+}
