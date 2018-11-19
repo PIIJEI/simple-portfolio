@@ -120,4 +120,47 @@
   });
 
 
+  /* Portfolio Tags Selector Active Class */
+  var tags = $('.tag-selectors ul li');
+
+  /* Get Tags by data-id */
+  var dataID = $('.tag-content-main-thumbs .tag-thumb');
+
+  //Get Count of projects displayed
+  var listCount = $('#tag-bottom-project-count');
+  var listCountTags = $('.tag-thumb');
+
+  listCount.html($('.tag-thumb').length);
+
+  $(tags).click(function(){
+    $(this).each(function() {
+      if($(this)) {
+        $('.tag-selectors ul li').removeClass('tab-active');
+        $(this).addClass('tab-active');
+        if($(this).attr('id') === 'all') {
+          $('.tag-thumb').show();
+          listCount.html($('.tag-thumb').length);
+        }
+        if($(this).attr('id') === 'web') {
+          $('.tag-thumb').hide();
+          $('.tag-thumb[data-id="web"]').show();
+          listCount.html($('div[data-id="web"]').length);
+        }
+        if($(this).attr('id') === 'graphics') {
+          $('.tag-thumb').hide();
+          $('.tag-thumb[data-id="graphics"]').show();
+          listCount.html($('div[data-id="graphics"]').length);
+        }
+        if($(this).attr('id') === 'photography') {
+          $('.tag-thumb').hide();
+          $('.tag-thumb[data-id="photography"]').show();
+          listCount.html($('div[data-id="photography"]').length);
+        }
+      }
+    });
+  });
+
+
+
+
 }(jQuery));
